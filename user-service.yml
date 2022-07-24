@@ -7,3 +7,7 @@ server:
   servlet:
     context-path: /taller2/api/v1
   port: 9050
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9010/eureka/
