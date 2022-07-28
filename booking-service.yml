@@ -3,6 +3,13 @@ spring:
     name: booking-service
   profiles:
     active: dev
+  boot:
+    admin:
+      client:
+        url: http://localhost:9020
+        instance:
+          service-base-url: http://localhost:9080
+          name: Booking API Service
 server:
   servlet:
     context-path: /taller2/api/v1
@@ -14,4 +21,12 @@ eureka:
 feign:
   circuitbreaker:
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
 
